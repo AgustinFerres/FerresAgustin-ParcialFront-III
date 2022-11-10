@@ -18,9 +18,12 @@ export default function Post({titulo, texto, likes, handleLikesTotales}) {
 
   const handleLikes = e => {
     
-    setCantidadLikes(prev => prev + 1)
-    handleLikesTotales()
-    console.log("Suma 1 like: " + titulo);
+    if (cantidadLikes < 10) {
+
+      setCantidadLikes(prev => prev + 1)
+      handleLikesTotales()
+      console.log("Suma 1 like: " + titulo);
+    }
   }
 
   return (
